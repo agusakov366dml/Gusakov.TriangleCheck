@@ -9,13 +9,7 @@ if(double.TryParse(Console.ReadLine(), out var firstNumber)
     && double.TryParse(Console.ReadLine(), out var secondNumber) 
     && double.TryParse(Console.ReadLine(), out var thirdNumber)) 
 {
-    var triangleType = new Triangle(
-        firstNumber,
-        secondNumber,
-        thirdNumber)
-        .GetTriangleType();
-
-    var message = triangleType switch
+    var message = new Triangle(firstNumber, secondNumber, thirdNumber).GetTriangleType() switch
     {
         TriangleType.AcuteTriangle => "Острый угол",
         TriangleType.ObtuseTriangle => "Тупой Угол",
