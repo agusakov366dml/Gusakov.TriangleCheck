@@ -10,8 +10,6 @@ public class CheckerTriangleService : ICheckerTriangleService
         double secondSide,
         double thirdSide)
     {
-        CheckTriangleSidesForZerro(firstSide, secondSide, thirdSide);
-
         var SumOfAquaresOfSides = new List<double>()
         {
             Math.Pow(firstSide, 2),
@@ -47,15 +45,4 @@ public class CheckerTriangleService : ICheckerTriangleService
         sumOfAquaresOfSides[0] + sumOfAquaresOfSides[1] == sumOfAquaresOfSides[2]
     ? true
     : false;
-
-    private void CheckTriangleSidesForZerro(
-        double firstSide,
-        double secondSide,
-        double thirdSide)
-    {
-        if (firstSide == 0 
-            || secondSide == 0 
-            || thirdSide == 0)
-            throw new ValueOfTheSidesOfTheTriangleIsZero("Стороны треугольника не должны иметь значение равное 0");
-    }
 }
